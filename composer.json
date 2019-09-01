@@ -1,0 +1,14 @@
+{
+    "name": "codtail/translation",
+    "description": "this package is for laravel model translation",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sohype Khaled",
+            "email": "sohype.mop@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
