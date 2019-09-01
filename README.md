@@ -2,12 +2,17 @@
 This package provide easy and smooth multi-language model translation for laravel application.
 
 ###installation
+```php
     composer require codtail/translation
+```
 
 ######migrations:
+```php
     $table->longText('translations');
+```
 
 ######model:
+```
     <?php
     
     namespace App;
@@ -17,12 +22,13 @@ This package provide easy and smooth multi-language model translation for larave
     
     class post extends Model
     {
-        ....
+         //....
         use Translator;
         
         public static $translated = ['title', 'content'];
-        ....
+         // ....
     }
+```
     
 ######config
 add the available locales in ```app.php``` in config folder
