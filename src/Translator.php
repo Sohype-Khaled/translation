@@ -15,6 +15,7 @@ trait Translator
                         $translations[$locale][$field] = "";
                 }
             }
+            // TODO check if options has translations
             $options['translations'] = json_encode($translations);
         }
         return static::query()->create($options);
