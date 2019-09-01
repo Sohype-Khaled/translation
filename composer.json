@@ -14,5 +14,12 @@
         "psr-4": {
             "Codtail\\Translation\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "Translator": "Codtail\\Translation\\Translator"
+            }
+        }
     }
 }
