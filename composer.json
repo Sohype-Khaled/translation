@@ -1,6 +1,6 @@
 {
     "name": "codtail/translation",
-    "description": "this package is for laravel model translation",
+    "description": "An elegant laravel model translation tool",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,11 +15,22 @@
             "Codtail\\Translation\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Codtail\\Translation\\Tests\\": "tests"
+        }
+    },
     "extra": {
         "laravel": {
             "aliases": {
                 "Translator": "Codtail\\Translation\\Translator"
-            }
+            },
+            "providers": [
+                "Codtail\\Translation\\TranslationServiceProvider"
+            ]
         }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0@dev"
     }
 }
