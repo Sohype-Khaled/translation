@@ -11,6 +11,10 @@ class TranslationServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishable();
         }
+
+        if (! $this->app->routesAreCached()) {
+            require __DIR__.'/../routes.php';
+        }
     }
 
     public function register()
