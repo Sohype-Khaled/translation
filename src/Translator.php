@@ -234,14 +234,4 @@ trait Translator
                     $this->translations[$locale][$attribute] : false;
         return $this;
     }
-
-    /**
-     * Get all of the current attributes on the model.
-     *
-     * @return array
-     */
-    public function getAttributes()
-    {
-        return is_array($this->attributes) ? array_merge($this->attributes, ["translations" => "{}"]) : ["translations" => "{}"];
-    }
 }
