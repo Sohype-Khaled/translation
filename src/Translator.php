@@ -210,28 +210,13 @@ trait Translator
     public function getAttributeValue($key)
     {
         $locale = app()->getLocale();
-        if ($locale != config('translation.fallback_locale')) {
-            $value = $this->getAttributeTranslation($locale, $key);
-            if (in_array($key, $this->getTranslatableProperties())
-                && array_key_exists($locale, $value->translations)) {
-                return $value->translations[$locale][$key];
-            }
-        }
-        return parent::getAttributeValue($key);
-    }
 
-    /**
-     * get translation for a certain attribute
-     * @param $locale
-     * @param $attribute
-     * @return mixed
-     */
-    public function getAttributeTranslation($locale, $attribute)
-    {
-        if (in_array($attribute, $this->translatable))
-            if (array_key_exists($locale, $this->translations))
-                return array_key_exists($attribute, $this->translations[$locale]) ?
-                    $this->translations[$locale][$attribute] : false;
-        return $this;
+        if (!in_array($key, $this->translatable) || $locale == config('translation.fallback_locale'))
+            return parent::getAttributeValue($key);
+
+        if (array_key_exists($locale, $this->translations) && array_key_exists($key, $this->translations[$locale]))
+            return $this->translations[$locale][$key];
+        else
+            return parent::getAttributeValue($key);
     }
 }

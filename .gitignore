@@ -1,4 +1,4 @@
-/vendor
-/.idea
-/.vscode
+vendor/*
+.idea
+.vscode
 .phpunit.result.cache
