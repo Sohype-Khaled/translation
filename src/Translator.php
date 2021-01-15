@@ -35,18 +35,6 @@ trait Translator
     }
 
 
-    // /**
-    //  * Add the translations to attributes array
-    //  *
-    //  * @return array
-    //  */
-    // public function getAttributes()
-    // {
-    //     return is_array($this->attributes) 
-    //         ? array_merge($this->attributes, ['translations' => '{}']) 
-    //         : ['translations' => '{}'];
-    // }
-
     /**
      * Adds the translation events to the observables array
      * @return array
